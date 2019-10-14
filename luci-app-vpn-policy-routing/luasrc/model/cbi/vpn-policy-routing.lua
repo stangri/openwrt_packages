@@ -92,7 +92,7 @@ local tmpfsVersion, tmpfsStatus = "", "Stopped"
 if tmpfs and tmpfs['data'] then
 	if tmpfs['data']['status'] and tmpfs['data']['status'] ~= "" then
 		tmpfsStatus = tmpfs['data']['status']
-		tmpfsStatus = tmpfsStatus:gsub('\\033[^ ]*', '✓')
+		tmpfsStatus = tmpfsStatus:gsub('\\033[^ ]*', '&nbsp;✓')
 	end
 	if tmpfs['data']['version'] and tmpfs['data']['version'] ~= "" then
 		tmpfsVersion = " [" .. packageName .. " " .. tmpfs['data']['version'] .. "]"
@@ -266,7 +266,7 @@ end
 la.rmempty = true
 
 lp = p:option(Value, "local_port", translate("Local ports"))
-lp.datatype    = "list(neg(or(portrange, ',')))"
+lp.datatype    = 'list(neg(or(portrange, string)))'
 lp.placeholder = "0-65535"
 lp.rmempty = true
 
@@ -275,7 +275,7 @@ ra.placeholder = "0.0.0.0/0"
 ra.rmempty = true
 
 rp = p:option(Value, "remote_port", translate("Remote ports"))
-rp.datatype    = "list(neg(or(portrange, ',')))"
+rp.datatype    = 'list(neg(or(portrange, string)))'
 rp.placeholder = "0-65535"
 rp.rmempty = true
 
