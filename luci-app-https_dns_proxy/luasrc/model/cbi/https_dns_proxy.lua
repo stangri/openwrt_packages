@@ -82,7 +82,15 @@ end
 
 s3 = m:section(TypedSection, "https_dns_proxy", translate("Instances"), translate("When you add/remove any instances below, they will be used to override the 'DNS forwardings' section of ")
 		.. [[ <a href="]] .. dispatcher.build_url("admin/network/dhcp") .. [[">]]
-		.. translate("DHCP and DNS") .. [[</a>]] .. ".")
+		.. translate("DHCP and DNS") .. [[</a>]] .. "."
+    .. "<br />"
+    .. translate("For more information on different options check ")
+		.. [[ <a href="https://adguard.com/en/adguard-dns/overview.html">]]
+    .. "AdGuard.com" .. [[</a>]] .. ", "
+		.. [[ <a href="https://cleanbrowsing.org/guides/dnsoverhttps">]]
+    .. "CleanBrowsing.org" .. [[</a>]] .. " " .. translate("and") .. " "
+		.. [[ <a href="https://www.quad9.net/doh-quad9-dns-servers/">]]
+    .. "Quad9.net" .. [[</a>]] .. ".")
 s3.template = "cbi/tblsection"
 s3.sortable  = false
 s3.anonymous = true
