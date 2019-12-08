@@ -19,7 +19,7 @@ CMAKE_OPTIONS += -DCLANG_TIDY_EXE=
 define Package/https_dns_proxy
 	SECTION:=net
 	CATEGORY:=Network
-	TITLE:=DNS over HTTPS Proxy Server
+	TITLE:=DNS Over HTTPS Proxy Server
 	DEPENDS:=+libcares +libcurl +libev +ca-bundle
 endef
 
