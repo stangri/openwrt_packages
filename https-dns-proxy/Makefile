@@ -20,6 +20,7 @@ define Package/https-dns-proxy
 	CATEGORY:=Network
 	TITLE:=DNS Over HTTPS Proxy
 	DEPENDS:=+libcares +libcurl +libev +ca-bundle
+	CONFLICTS:=https_dns_proxy
 endef
 
 define Package/https-dns-proxy/install
