@@ -75,6 +75,10 @@ stop_service() {
 	fi
 }
 
+service_triggers() {
+		procd_add_reload_trigger 'https-dns-proxy'
+}
+
 dnsmasq_add_doh_server() {
 	local cfg="$1" value="$2"
 	uci -q add_list dhcp."$cfg".server="$value"
